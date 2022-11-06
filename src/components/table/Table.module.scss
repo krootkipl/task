@@ -1,0 +1,11 @@
+@use "../../styles/mixins";
+
+.wrapper {
+  @include mixins.flex(column, center, stretch, center);
+  height: 100%;
+}
+
+.table {
+  overflow-y: scroll;
+  height: 100%;
+}

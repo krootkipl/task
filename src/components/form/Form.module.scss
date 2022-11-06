@@ -1,0 +1,8 @@
+@use "../../styles/mixins";
+
+.wrapper {
+  margin-left: 20px;
+  @include mixins.flex(column, flex-start, flex-start, flex-start);
+  flex-wrap: wrap;
+  gap: 10px;
+}

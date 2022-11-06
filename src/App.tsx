@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import Navbar from './components/navbar';
+import Balance from './components/balance';
+import Filter from './components/filter';
+import FormComponent from './components/form';
+import Table from './components/table';
+import Footer from './components/footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <Navbar/>
       </header>
+      <main className={styles.main}>
+        <div className={styles.main__inputs}>
+          <div className={styles.main__inputs__manage}>
+            <Balance/>
+            <Filter/>
+          </div>
+          <div className={styles.main__form}>
+            <FormComponent/>
+          </div>
+        </div>
+        <div className={styles.main__table}>
+          <Table/>
+        </div>
+      </main>
+      <footer className={styles.footer}>
+        <Footer/>
+      </footer>
+      <ToastContainer />
     </div>
   );
 }

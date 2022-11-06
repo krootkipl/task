@@ -1,0 +1,49 @@
+@use "styles/mixins";
+
+$headerHeight: 50px;
+$footerHeight: 30px;
+
+.wrapper {
+  @include mixins.flex(column, space-between, center, stretch);
+  height: 100vh;
+}
+
+.header {
+  @include mixins.flex(row, center, center, center);
+  height: $headerHeight;
+}
+
+.main {
+  @include mixins.flex(column, flex-start, center, center);
+  padding: 5px;
+  max-width: 1200px;
+  height: calc(100% - ($headerHeight + $footerHeight));
+
+  &__inputs {
+    @include mixins.flex(row, space-between, stretch, stretch);
+    width: 100%;
+    height: 250px;
+    padding: 5px;
+
+    &__manage {
+      @include mixins.flex(column, space-between, flex-start, stretch);
+      border-right: 1px solid darkgray;
+      padding-right: 20px;
+      width: 50%;
+    }
+  }
+
+  &__form {
+    width: 50%;
+  }
+
+  &__table {
+    height: calc(100% - 250px);
+    width: 100%;
+  }
+}
+
+.footer {
+  @include mixins.flex(row, center, center, center);
+  height: $footerHeight;
+}
